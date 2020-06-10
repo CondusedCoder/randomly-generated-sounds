@@ -4,7 +4,7 @@ import wave
 import struct
 import random
 
-
+#edit link for the code to work v
 os.chdir("D:/Coding Files/python projects/random sounds")
 audio = []
 
@@ -24,8 +24,11 @@ def append_sinewav(freq, duration_milliseconds, volume):
 
     for x in range(int(num_samples)):
         audio.append(volume * math.sin(2* math.pi * freq * (x / sample_rate)))
-
+    print(f"added sound with {freqq} frequency")
+    
 def save_wav(file_name):
+    print("saving...")
+
     wav_file=wave.open(file_name, "w")
     nchannels = 1
     sampwidth = 2
@@ -40,12 +43,13 @@ def save_wav(file_name):
         wav_file.writeframes(struct.pack("h", int(sample * 32767.0)))
 
     wav_file.close()
+    print("saved")
 
 def create_random_sound():
     min_freq = 0
     max_freq = 1000
     random_freq = random.randrange(min_freq, max_freq)
-    
+
     append_sinewav(random_freq, 1000, 1.0)
 
 for i in range(10):
