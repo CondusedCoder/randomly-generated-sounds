@@ -51,8 +51,9 @@ def create_random_sound():
     random_freq = random.randrange(min_freq, max_freq)
 
     append_sinewav(random_freq, 1000, 1.0)
+amount = int(input("how many sounds"))
 
-for i in range(10):
+for i in range(amount):
     create_random_sound()
 
     append_silence(1000)
