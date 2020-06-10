@@ -24,8 +24,8 @@ def append_sinewav(freq, duration_milliseconds, volume):
 
     for x in range(int(num_samples)):
         audio.append(volume * math.sin(2* math.pi * freq * (x / sample_rate)))
-    print(f"added sound with {freqq} frequency")
-    
+    print(f"added sound with {freq} frequency")
+
 def save_wav(file_name):
     print("saving...")
 
